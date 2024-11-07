@@ -7,8 +7,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'best_vs_mean'
-          >>> 'best_vs_mean' in vars()
-          True
+          >>> assert 'best_vs_mean' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -17,16 +16,14 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'best_vs_mean'
           >>> # from its initial state (of ...)
-          >>> best_vs_mean is not ...
-          True
+          >>> assert best_vs_mean is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> np.isclose(best_vs_mean, 0.0025637)
-          True
+          >>> assert np.isclose(best_vs_mean, 0.0025637)
           """,
           'hidden': False,
           'locked': False

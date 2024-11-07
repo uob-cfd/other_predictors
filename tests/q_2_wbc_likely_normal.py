@@ -7,8 +7,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'wbc_likely_normal'
-          >>> 'wbc_likely_normal' in vars()
-          True
+          >>> assert 'wbc_likely_normal' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -17,16 +16,14 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'wbc_likely_normal'
           >>> # from its initial state (of ...)
-          >>> wbc_likely_normal is not ...
-          True
+          >>> assert wbc_likely_normal is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> wbc_likely_normal
-          3
+          >>> assert wbc_likely_normal == 3
           """,
           'hidden': False,
           'locked': False

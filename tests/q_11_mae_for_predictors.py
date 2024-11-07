@@ -7,8 +7,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'predictors'
-          >>> 'predictors' in vars()
-          True
+          >>> assert 'predictors' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -17,16 +16,14 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'predictors'
           >>> # from its initial state (of ...)
-          >>> predictors is not ...
-          True
+          >>> assert predictors is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> np.allclose((predictors - 7000) * 2, np.arange(6000))
-          True
+          >>> assert np.allclose((predictors - 7000) * 2, np.arange(6000))
           """,
           'hidden': False,
           'locked': False
@@ -34,8 +31,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'mae_for_predictors'
-          >>> 'mae_for_predictors' in vars()
-          True
+          >>> assert 'mae_for_predictors' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -44,16 +40,14 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'mae_for_predictors'
           >>> # from its initial state (of ...)
-          >>> mae_for_predictors is not ...
-          True
+          >>> assert mae_for_predictors is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> len(mae_for_predictors) == len(predictors)
-          True
+          >>> assert len(mae_for_predictors) == len(predictors)
           """,
           'hidden': False,
           'locked': False
@@ -65,8 +59,7 @@ test = {
           >>> my_wbc = np.array(ckd['White Blood Cell Count'])
           >>> ps = np.arange(6000) / 2 + 7000  # Slightly obfuscated.
           >>> m_abs_deviations = np.mean(np.abs(my_wbc[:, None] - ps), axis=0)
-          >>> np.allclose(mae_for_predictors, m_abs_deviations)
-          True
+          >>> assert np.allclose(mae_for_predictors, m_abs_deviations)
           """,
           'hidden': False,
           'locked': False

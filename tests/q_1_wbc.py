@@ -7,8 +7,7 @@ test = {
         {
           'code': r"""
           >>> # You need to set the value for 'wbc'
-          >>> 'wbc' in vars()
-          True
+          >>> assert 'wbc' in vars()
           """,
           'hidden': False,
           'locked': False
@@ -17,16 +16,14 @@ test = {
           'code': r"""
           >>> # You haven't changed the value for 'wbc'
           >>> # from its initial state (of ...)
-          >>> wbc is not ...
-          True
+          >>> assert wbc is not ...
           """,
           'hidden': False,
           'locked': False
         },
         {
           'code': r"""
-          >>> np.all(wbc == ckd['White Blood Cell Count'])
-          True
+          >>> assert np.all(wbc == ckd['White Blood Cell Count'])
           """,
           'hidden': False,
           'locked': False
